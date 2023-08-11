@@ -4,10 +4,12 @@ test module for testing the console one-line program commands
 """
 import unittest
 from unittest.mock import patch
-from console import HBNBCommand
 from io import StringIO
+from console import HBNBCommand
+
 
 class TestConsole(unittest.TestCase):
+    """test Console class"""
     def test_EOF(self):
         """test the end-of-file condition"""
         with patch('sys.stdout', new=StringIO()) as f:

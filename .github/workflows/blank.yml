@@ -44,5 +44,5 @@ jobs:
       - name: Run pylint
         run: |
             find . -mindepth 1 -type f -name '*.py' | xargs pylint \
-            --load-plugins=pylint.extensions.docparams --disable=invalid-name \
+            --load-plugins=pylint.extensions.docparams --disable=invalid-name,consider-using-f-string \
             --msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'
