@@ -5,7 +5,7 @@ Entry point module for Console program
 import cmd
 import sys
 
-class Console(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """The Console Program"""
     prompt="(hbnb) "
     def do_quit(self, _):
@@ -18,4 +18,4 @@ class Console(cmd.Cmd):
         return True
 
 if __name__ == "__main__":
-    Console().cmdloop()
+    HBNBCommand().cmdloop()
