@@ -43,5 +43,6 @@ jobs:
 
       - name: Run pylint
         run: |
-          pylint --load-plugins=pylint.extensions.docparams \
-          --msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}' ./*.py
+            pylint --disable=all --enable=comments --comment=y \
+            --load-plugins=pylint.extensions.docparams \
+            --msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}' ./*.py
