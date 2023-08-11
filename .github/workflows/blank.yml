@@ -43,6 +43,6 @@ jobs:
 
       - name: Run pylint
         run: |
-            pylint --disable=all --enable=comments --comment=y \
-            --load-plugins=pylint.extensions.docparams \
-            --msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}' ./*.py
+            find . -mindepth 1 -type f -name '*.py' | xargs pylint \
+            --load-plugins=pylint.extensions.docparams --disable=invalid-name \
+            --msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'
