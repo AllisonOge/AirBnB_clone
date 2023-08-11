@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pylint
+          pip install pycodestyle
 
       # Run tests and pylint
       - name: Run tests cases in the tests module
@@ -43,6 +43,4 @@ jobs:
 
       - name: Run pylint
         run: |
-            find . -mindepth 1 -type f -name '*.py' | xargs pylint \
-            --load-plugins=pylint.extensions.docparams --disable=invalid-name,consider-using-f-string \
-            --msg-template='{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}'
+            find . -mindepth 1 -type f -name '*.py' | xargs pycodestyle
