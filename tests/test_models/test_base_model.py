@@ -5,6 +5,7 @@ module for testing base model class
 import unittest
 from models.base_model import BaseModel
 
+
 class TestBaseModel(unittest.TestCase):
     """Test the base model class"""
     def test_uuid(self):

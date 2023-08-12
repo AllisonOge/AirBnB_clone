@@ -14,7 +14,7 @@ class TestConsole(unittest.TestCase):
         """test the end-of-file condition"""
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("EOF")
-            self.assertEqual("\n", f.getvalue()) # no output
+            self.assertEqual("\n", f.getvalue())  # no output
 
     def test_quit(self):
         """test the quit command"""
@@ -25,4 +25,5 @@ class TestConsole(unittest.TestCase):
         """test the help command"""
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("help")
-            self.assertIn("Documented commands (type help <topic>):", f.getvalue())
+            self.assertIn("Documented commands (type help <topic>):",
+                          f.getvalue())
