@@ -82,7 +82,7 @@ class TestConsole(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("show")
             self.assertEqual("** class name missing **\n", f.getvalue())
-        
+
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("show MyModel")
             self.assertEqual("** class doesn't exist **\n", f.getvalue())
@@ -264,7 +264,8 @@ class TestConsole(unittest.TestCase):
             key = f.getvalue().strip()
 
         with patch('sys.stdout', new=StringIO()) as f:
-            HBNBCommand().onecmd('update BaseModel {} name "Betty"'.format(key))
+            HBNBCommand().onecmd('update BaseModel {} name "Betty"'
+                                 .format(key))
             self.assertEqual("", f.getvalue())
 
         with patch('sys.stdout', new=StringIO()) as f:
@@ -272,7 +273,9 @@ class TestConsole(unittest.TestCase):
             self.assertIn("Betty", f.getvalue())
 
         with patch('sys.stdout', new=StringIO()) as f:
-            HBNBCommand().onecmd('update BaseModel {} email "betty@holberton.com"'.format(key))
+            HBNBCommand().onecmd(
+                                'update BaseModel ' + key + ' email '
+                                + '"betty@holberton.com"')
             self.assertEqual("", f.getvalue())
 
         with patch('sys.stdout', new=StringIO()) as f:

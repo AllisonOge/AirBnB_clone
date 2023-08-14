@@ -41,7 +41,7 @@ class HBNBCommand(cmd.Cmd):
         arg = line.split()[0]
         try:
             if arg == "BaseModel":
-                new  = BaseModel()
+                new = BaseModel()
             elif arg == "User":
                 new = User()
             elif arg == "State":
@@ -68,7 +68,7 @@ class HBNBCommand(cmd.Cmd):
             return
         args = line.split()
         if args[0] not in ["BaseModel", "User", "State", "City",
-                             "Amenity", "Place", "Review"]:
+                           "Amenity", "Place", "Review"]:
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
@@ -86,7 +86,7 @@ class HBNBCommand(cmd.Cmd):
             return
         args = line.split()
         if args[0] not in ["BaseModel", "User", "State", "City",
-                             "Amenity", "Place", "Review"]:
+                           "Amenity", "Place", "Review"]:
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
@@ -107,7 +107,7 @@ class HBNBCommand(cmd.Cmd):
             return
         args = line.split()
         if args[0] not in ["BaseModel", "User", "State", "City",
-                                    "Amenity", "Place", "Review"]:
+                           "Amenity", "Place", "Review"]:
             print("** class doesn't exist **")
         else:
             print([str(v) for v in storage.all().values()])
@@ -123,7 +123,7 @@ class HBNBCommand(cmd.Cmd):
             return
         args = line.split()
         if args[0] not in ["BaseModel", "User", "State", "City",
-                                    "Amenity", "Place", "Review"]:
+                           "Amenity", "Place", "Review"]:
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
@@ -140,6 +140,7 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
             except KeyError:
                 print("** no instance found **")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()

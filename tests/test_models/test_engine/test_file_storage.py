@@ -37,13 +37,15 @@ class TestFileStorage(unittest.TestCase):
         """Test the all method of the file storage class"""
         base = BaseModel()
         self.storage.new(base)
-        self.assertEqual(self.storage.all(), self.storage._FileStorage__objects)
+        self.assertEqual(self.storage.all(),
+                         self.storage._FileStorage__objects)
 
     def test_new_one(self):
         """Test the new method of the file storage class with one object"""
         base = BaseModel()
         self.storage.new(base)
-        self.assertEqual(self.storage.all(), self.storage._FileStorage__objects)
+        self.assertEqual(self.storage.all(),
+                         self.storage._FileStorage__objects)
 
     def test_new_two(self):
         """Test the new method of the file storage class with two objects"""
@@ -51,7 +53,8 @@ class TestFileStorage(unittest.TestCase):
         base2 = BaseModel()
         self.storage.new(base)
         self.storage.new(base2)
-        self.assertEqual(self.storage.all(), self.storage._FileStorage__objects)
+        self.assertEqual(self.storage.all(),
+                         self.storage._FileStorage__objects)
 
     def test_save(self):
         """Test the save method of the file storage class"""

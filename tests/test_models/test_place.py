@@ -17,13 +17,13 @@ class TestPlace(unittest.TestCase):
         if not os.path.exists("file.json"):
             os.mknod("file.json")
         self.place = Place()
-    
+
     def tearDown(self):
         """tear down"""
         if os.path.exists("file.json"):
             os.remove("file.json")
         del self.place
-    
+
     def test_creation(self):
         '''
         ensure correct initialization

@@ -4,7 +4,7 @@ module for base model class
 """
 import uuid
 from datetime import datetime
-import models # ensures the models module __init__.py is run
+import models  # ensures the models module __init__.py is run
 
 
 class BaseModel:
