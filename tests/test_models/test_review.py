@@ -3,6 +3,7 @@
     test from base model
 """
 import unittest
+import os
 from models.review import Review
 
 
@@ -12,10 +13,21 @@ class TestReview(unittest.TestCase):
     """
 
     def setUp(self):
+        """setUp"""
+        if not os.path.exists("file.json"):
+            os.mknod("file.json")
         self.review = Review()
+
+    def tearDown(self):
+        """tearDown"""
+        if os.path.exists("file.json"):
+            os.remove("file.json")
+        del self.review
 
     def test_creation(self):
         '''
         ensures correct creaion
         '''
         self.assertEqual(self.review.text, '')
+        self.assertEqual(self.review.place_id, '')
+        self.assertEqual(self.review.user_id, '')
