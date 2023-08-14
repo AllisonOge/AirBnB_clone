@@ -4,6 +4,7 @@ module for base model class
 """
 import uuid
 from datetime import datetime
+import models # ensures the models module __init__.py is run
 
 
 class BaseModel:
@@ -20,6 +21,7 @@ class BaseModel:
                                                        "%Y-%m-%dT%H:%M:%S.%f"))
                 elif k != "__class__":
                     setattr(self, k, v)
+        models.storage.new(self)
 
     def __str__(self):
         """Return a string representation of the class"""
@@ -29,6 +31,7 @@ class BaseModel:
     def save(self):
         """Update the updated_at attribute with the current datetime"""
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """Return a dictionary representation of the class"""
