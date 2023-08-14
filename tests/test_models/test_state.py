@@ -18,4 +18,4 @@ class TestState(unittest.TestCase):
         '''
         ensures correct creation
         '''
-        self.assertEqual(self.State.name, '')
+        self.assertEqual(self.state.name, '')

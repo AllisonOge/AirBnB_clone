@@ -18,17 +18,16 @@ class TestUser(unittest.TestCase):
         '''
         ensure correct creation
         '''
-
-        data = {'id' : 3,
-            'fist_name' : 'Betty',
-            'last_name':'Holberton',
-            'password':'123',
-            'email':'correo@correo',
-            }
+        data = {'id': 3,
+                'first_name': 'Betty',
+                'last_name': 'Holberton',
+                'password': '123',
+                'email': 'correo@correo',
+                }
 
         self.user = User(**data)
         self.assertEqual(self.user.id, 3)
         self.assertEqual(self.user.first_name, 'Betty')
-        self.assertEqual(self.user.first_name, 'Holberton')
+        self.assertEqual(self.user.last_name, 'Holberton')
         self.assertEqual(self.user.password, '123')
         self.assertEqual(self.user.email, 'correo@correo')
