@@ -5,6 +5,12 @@ Entry point module for Console program
 import cmd
 import sys
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 from models import storage
 
 
@@ -36,18 +42,18 @@ class HBNBCommand(cmd.Cmd):
         try:
             if arg == "BaseModel":
                 new  = BaseModel()
-            # elif arg == "User":
-            #     new = User()
-            # elif arg == "State":
-            #     new = State()
-            # elif arg == "City":
-            #     new = City()
-            # elif arg == "Amenity":
-            #     new = Amenity()
-            # elif arg == "Place":
-            #     new = Place()
-            # elif arg == "Review":
-            #     new = Review()
+            elif arg == "User":
+                new = User()
+            elif arg == "State":
+                new = State()
+            elif arg == "City":
+                new = City()
+            elif arg == "Amenity":
+                new = Amenity()
+            elif arg == "Place":
+                new = Place()
+            elif arg == "Review":
+                new = Review()
             new.save()
             print(new.id)
         except NameError:
@@ -121,16 +127,17 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
-        elif len(args) == 2:
-            print("** attribute name missing **")
-        elif len(args) == 3:
-            print("** value missing **")
         else:
             try:
                 key = "{}.{}".format(args[0], args[1])
                 obj = storage.all()[key]
-                setattr(obj, args[2], args[3])
-                storage.save()
+                if len(args) == 2:
+                    print("** attribute name missing **")
+                elif len(args) == 3:
+                    print("** value missing **")
+                else:
+                    setattr(obj, args[2], args[3])
+                    storage.save()
             except KeyError:
                 print("** no instance found **")
 
