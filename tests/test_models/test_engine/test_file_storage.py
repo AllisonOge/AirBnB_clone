@@ -6,6 +6,12 @@ import unittest
 import os
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
+from models.user import User
+from models.place import Place
+from models.city import City
+from models.state import State
+from models.amenity import Amenity
+from models.review import Review
 
 
 class TestFileStorage(unittest.TestCase):
@@ -74,6 +80,30 @@ class TestFileStorage(unittest.TestCase):
         base2 = BaseModel()
         self.storage.new(base)
         self.storage.new(base2)
+        storage_objects = self.storage.all()
+        self.storage.save()
+        del self.storage
+        self.storage = FileStorage()
+        self.storage.reload()
+        for k, _ in storage_objects.items():
+            self.assertTrue(k in self.storage.all())
+
+    def test_reload_models(self):
+        """Test the reload method of the file storage class for models"""
+        self.storage._FileStorage__objects.clear()
+        self.assertEqual(self.storage.all(), {})
+        user = User()
+        state = State()
+        city = City()
+        place = Place()
+        amenity = Amenity()
+        review = Review()
+        self.storage.new(user)
+        self.storage.new(state)
+        self.storage.new(city)
+        self.storage.new(place)
+        self.storage.new(amenity)
+        self.storage.new(review)
         storage_objects = self.storage.all()
         self.storage.save()
         del self.storage

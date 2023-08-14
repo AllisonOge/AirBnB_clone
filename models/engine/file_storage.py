@@ -4,6 +4,12 @@ module for file storage class
 """
 import json
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class FileStorage:
@@ -39,17 +45,17 @@ class FileStorage:
                 for k, v in d.items():
                     if v["__class__"] == "BaseModel":
                         self.__objects[k] = BaseModel(**v)
-                    # elif v["__class__"] == "User":
-                    #     self.__objects[k] = User(**v)
-                    # elif v["__class__"] == "State":
-                    #     self.__objects[k] = State(**v)
-                    # elif v["__class__"] == "City":
-                    #     self.__objects[k] = City(**v)
-                    # elif v["__class__"] == "Amenity":
-                    #     self.__objects[k] = Amenity(**v)
-                    # elif v["__class__"] == "Place":
-                    #     self.__objects[k] = Place(**v)
-                    # elif v["__class__"] == "Review":
-                    #     self.__objects[k] = Review(**v)
+                    elif v["__class__"] == "User":
+                        self.__objects[k] = User(**v)
+                    elif v["__class__"] == "State":
+                        self.__objects[k] = State(**v)
+                    elif v["__class__"] == "City":
+                        self.__objects[k] = City(**v)
+                    elif v["__class__"] == "Amenity":
+                        self.__objects[k] = Amenity(**v)
+                    elif v["__class__"] == "Place":
+                        self.__objects[k] = Place(**v)
+                    elif v["__class__"] == "Review":
+                        self.__objects[k] = Review(**v)
         except FileNotFoundError:
             pass
