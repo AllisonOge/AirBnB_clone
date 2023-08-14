@@ -19,7 +19,10 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     def do_quit(self, _):
-        """Quit command to exit the program"""
+        """Quit command to exit the program
+
+        Usage: quit
+        """
         sys.exit()
 
     def do_EOF(self, _):
@@ -34,6 +37,8 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, line):
         """Create a new instance of data models, save it (to the JSON file)
         and print the id
+
+        Usage: create <class name>
         """
         if not line:
             print("** class name missing **")
@@ -62,6 +67,8 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, line):
         """Prints the string representation of an instance based on the
         class name and id
+
+        Usage: show <class name> <id>
         """
         if not line:
             print("** class name missing **")
@@ -80,7 +87,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, line):
-        """Deletes an instance based on the class name and id"""
+        """Deletes an instance based on the class name and id
+
+        Usage: destroy <class name> <id>
+        """
         if not line:
             print("** class name missing **")
             return
@@ -101,13 +111,12 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, line):
         """Prints all string representation of all instances based or not on
         the class name
+
+        Usage: all <class name> or all
         """
-        if not line:
-            print("** class name missing **")
-            return
         args = line.split()
-        if args[0] not in ["BaseModel", "User", "State", "City",
-                           "Amenity", "Place", "Review"]:
+        if line and args[0] not in ["BaseModel", "User", "State", "City",
+                                    "Amenity", "Place", "Review"]:
             print("** class doesn't exist **")
         else:
             print([str(v) for v in storage.all().values()])

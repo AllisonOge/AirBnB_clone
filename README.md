@@ -11,6 +11,40 @@ Deals with serialization/deserialization of Python Object to JSON. The requireme
 - CRUD operation
 - Persist to JSON file
 
+#### Quick Start
+Run the `console.py` file to use the console terminal and try some CRUD operations, observe the impact on the `file.json` file in the root directory.
+> Examples
+```bash
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+
+(hbnb) help all
+Prints all string representation of all instances based or not on
+        the class name
+
+        Usage: all <class name> or all
+        
+(hbnb) all
+[]
+(hbnb) help create
+Create a new instance of data models, save it (to the JSON file)
+        and print the id
+
+        Usage: create <class name>
+        
+(hbnb) create User
+22926be7-6e91-427d-973a-71a79e8cea7d
+(hbnb) all
+["[User] (22926be7-6e91-427d-973a-71a79e8cea7d) {'id': '22926be7-6e91-427d-973a-71a79e8cea7d', 'created_at': datetime.datetime(2023, 8, 14, 4, 32, 51, 38740), 'updated_at': datetime.datetime(2023, 8, 14, 4, 32, 51, 38763)}"]
+(hbnb) create Place
+62d07192-f0ce-406c-bfe6-cb730ae5661b
+(hbnb) all
+["[User] (22926be7-6e91-427d-973a-71a79e8cea7d) {'id': '22926be7-6e91-427d-973a-71a79e8cea7d', 'created_at': datetime.datetime(2023, 8, 14, 4, 32, 51, 38740), 'updated_at': datetime.datetime(2023, 8, 14, 4, 32, 51, 38763)}", "[Place] (62d07192-f0ce-406c-bfe6-cb730ae5661b) {'id': '62d07192-f0ce-406c-bfe6-cb730ae5661b', 'created_at': datetime.datetime(2023, 8, 14, 4, 33, 4, 881415), 'updated_at': datetime.datetime(2023, 8, 14, 4, 33, 4, 881433)}"]
+(hbnb) quit
+```
 #### Data model
 ![Alt text](datamodel.jpg)
 
