@@ -16,6 +16,6 @@ class City(BaseModel):
         if len(kwargs) == 0:
             super().__init__()
 
-        # if ther're values
+        # if there're values
         if len(kwargs) > 0:
             super().__init__(**kwargs)
