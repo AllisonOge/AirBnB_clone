@@ -21,6 +21,7 @@ class TestFileStorage(unittest.TestCase):
         if not os.path.exists("file.json"):
             os.mknod("file.json")
         self.storage = FileStorage()
+        self.storage._FileStorage__objects.clear()
 
     def tearDown(self):
         """Tear down the test"""
@@ -30,7 +31,6 @@ class TestFileStorage(unittest.TestCase):
 
     def test_file_storage(self):
         """Test the file storage class"""
-        self.storage._FileStorage__objects.clear()
         self.assertIsInstance(self.storage, FileStorage)
         self.assertTrue(hasattr(self.storage, "_FileStorage__file_path"))
         self.assertTrue(hasattr(self.storage, "_FileStorage__objects"))
@@ -74,7 +74,6 @@ class TestFileStorage(unittest.TestCase):
 
     def test_reload(self):
         """Test the reload method of the file storage class"""
-        self.storage._FileStorage__objects.clear()
         self.assertEqual(self.storage.all(), {})
         base = BaseModel()
         base2 = BaseModel()
@@ -90,7 +89,6 @@ class TestFileStorage(unittest.TestCase):
 
     def test_reload_models(self):
         """Test the reload method of the file storage class for models"""
-        self.storage._FileStorage__objects.clear()
         self.assertEqual(self.storage.all(), {})
         user = User()
         state = State()

@@ -19,6 +19,8 @@ class TestBaseModel(unittest.TestCase):
         base = BaseModel()
         base.save()
         self.assertNotEqual(base.created_at, base.updated_at)
+        with open("file.json", "r", encoding="utf-8") as f:
+            self.assertIn(base.id, f.read())
 
     def test_to_dict(self):
         """Test the to_dict method of the base model"""
