@@ -2,8 +2,8 @@
 AirBnB clone built using the Python language and Flask framework as part of the ALX projects
 
 ## Project design stages
-1. The console project (active-7 days sprint)
-2. 
+1. The console project (completed-7 days sprint)
+2. Web static (active-2days sprint)
 
 ### 1. The Console Project
 Deals with serialization/deserialization of Python Object to JSON. The requirements of this module are:
@@ -19,30 +19,35 @@ Run the `console.py` file to use the console terminal and try some CRUD operatio
 
 Documented commands (type help <topic>):
 ========================================
-EOF  all  create  destroy  help  quit  show  update
+EOF  all  count  create  destroy  help  quit  show  update
 
 (hbnb) help all
-Prints all string representation of all instances based or not on
-        the class name
+Prints all string representation of all instances based or not on the class name
 
-        Usage: all <class name> or all
-        
+Usage: all <class name> or all
+
+data models are: BaseModel, User, State, City, Amenity, Place, Review
 (hbnb) all
 []
 (hbnb) help create
-Create a new instance of data models, save it (to the JSON file)
-        and print the id
+Create a new instance of data models, save it (to the JSON file) and print the id
 
-        Usage: create <class name>
-        
+Usage: create <class name>
+
+data models are: BaseModel, User, State, City, Amenity, Place, Review
 (hbnb) create User
-22926be7-6e91-427d-973a-71a79e8cea7d
+60b0bba8-e9af-4da0-83e3-ab0e479a5285
 (hbnb) all
-["[User] (22926be7-6e91-427d-973a-71a79e8cea7d) {'id': '22926be7-6e91-427d-973a-71a79e8cea7d', 'created_at': datetime.datetime(2023, 8, 14, 4, 32, 51, 38740), 'updated_at': datetime.datetime(2023, 8, 14, 4, 32, 51, 38763)}"]
-(hbnb) create Place
-62d07192-f0ce-406c-bfe6-cb730ae5661b
-(hbnb) all
-["[User] (22926be7-6e91-427d-973a-71a79e8cea7d) {'id': '22926be7-6e91-427d-973a-71a79e8cea7d', 'created_at': datetime.datetime(2023, 8, 14, 4, 32, 51, 38740), 'updated_at': datetime.datetime(2023, 8, 14, 4, 32, 51, 38763)}", "[Place] (62d07192-f0ce-406c-bfe6-cb730ae5661b) {'id': '62d07192-f0ce-406c-bfe6-cb730ae5661b', 'created_at': datetime.datetime(2023, 8, 14, 4, 33, 4, 881415), 'updated_at': datetime.datetime(2023, 8, 14, 4, 33, 4, 881433)}"]
+["[User] (60b0bba8-e9af-4da0-83e3-ab0e479a5285) {'id': '60b0bba8-e9af-4da0-83e3-ab0e479a5285', 'created_at': datetime.datetime(2023, 8, 20, 9, 12, 59, 700603), 'updated_at': datetime.datetime(2023, 8, 20, 9, 12, 59, 700623)}"]
+(hbnb) help update
+Updates data model based on the class name and id by adding or updating attribute
+
+Usage: update <class name> <id> <attribute name> 
+
+data models are: BaseModel, User, State, City, Amenity, Place, Review
+(hbnb) update User 60b0bba8-e9af-4da0-83e3-ab0e479a5285 name Betty
+(hbnb) all User
+["[User] (60b0bba8-e9af-4da0-83e3-ab0e479a5285) {'id': '60b0bba8-e9af-4da0-83e3-ab0e479a5285', 'created_at': datetime.datetime(2023, 8, 20, 9, 12, 59, 700603), 'updated_at': datetime.datetime(2023, 8, 20, 9, 12, 59, 700623), 'name': 'Betty'}"]
 (hbnb) quit
 ```
 #### Data model
