@@ -3,7 +3,7 @@ AirBnB clone built using the Python language and Flask framework as part of the 
 
 ## Project design stages
 1. The console project (completed-7 days sprint)
-2. Web static (active-2days sprint)
+2. Web static (active-2 days sprint)
 
 ### 1. The Console Project
 Deals with serialization/deserialization of Python Object to JSON. The requirements of this module are:
