@@ -1,0 +1,125 @@
+
+.places {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.places h1 {
+	font-size: 30px;
+	text-align: left;
+}
+
+.places article {
+	display: inline-block;
+	width: 390px;
+	padding: 20px;
+	margin: 20px;
+	border: 1px solid #ff5a5f;
+	border-radius: 4px;
+	position: relative;
+}
+
+.places > div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.places h2 {
+	font-size: 30px;
+	text-align: center;
+}
+
+.price_by_night {
+	color: #ff5a5f;
+	border: #ff5a5f 4px solid;
+	border-radius: 100px;
+	min-width: 60px;
+	height: 60px;
+	font-size: 30px;
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	line-height: 60px;
+	padding: 10px;
+}
+
+.information {
+	height: 80px;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	margin-top: 70px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.user {
+	text-align: left;
+	padding: 15px 0;
+}
+
+.description {
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+
+.places article .amenities {
+	margin-top: 40px;
+	text-align: left;
+	width: 100%;
+	height: fit-content;
+	display: block;
+}
+
+.places article .amenities h2 {
+	font-size: 16px;
+	border-bottom: 1px solid #dddddd;
+	text-align: left;
+}
+
+.places article .amenities ul {
+	list-style: none;
+	margin-top: 20px;
+}
+
+.places article .amenities ul li {
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.places article .amenities ul img {
+	width: 30px;
+	margin-right: 10px;
+}
+
+.places article .reviews {
+	margin-top: 40px;
+	text-align: left;
+	width: 100%;
+	display: block;
+}
+
+.places article .reviews h2 {
+	font-size: 16px;
+	border-bottom: 1px solid #dddddd;
+	text-align: left;
+}
+
+.places article .reviews ul {
+	list-style: none;
+}
+
+.places article .reviews ul li {
+	margin-top: 10px;
+}
+
+.places article .reviews ul h3 {
+	font-size: 14px;
+}
+
+.places article .reviews ul p {
+	font-size: 12px;
+}
