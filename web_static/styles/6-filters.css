@@ -73,6 +73,7 @@
 }
 
 .locations .popover ul {
+	list-style: none;
 	margin-left: 10%;
 }
 
